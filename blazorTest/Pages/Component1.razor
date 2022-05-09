@@ -1,0 +1,31 @@
+﻿@page "/test1"
+<h3>Component1</h3>
+
+<EditForm Model="@example">
+<InputText id="dream job" @bind-Value = "dJob">  </InputText>    
+<InputText id="dream job" @bind-Value = "dJob">  </InputText>   
+<button class="btn btn-primary" type="submit">submit</button> 
+
+</EditForm>
+<CascadingValue Name = "DreamJob" Value = "@dJob">
+    <CascadingValue Name = "age" Value = "@age"> 
+        <CascadingValue Value = "major"> 
+            <Component2></Component2>
+        </CascadingValue>
+    </CascadingValue>
+    
+</CascadingValue>
+
+
+@code {
+    int age = 19;
+    string major = "Computer Science";
+    string dJob;
+
+    private ExampleModel example = new();
+
+    public class ExampleModel
+    {
+        
+    };
+}

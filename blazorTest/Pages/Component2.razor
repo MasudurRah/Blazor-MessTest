@@ -1,0 +1,14 @@
+﻿<h3>User Profile</h3>
+
+<p>Age = @age</p>
+<p>Major = @major </p>
+<p>Dream = @djob </p>
+
+@code {
+    [CascadingParameter(Name = "age")]
+    int age { get; set; }
+    [CascadingParameter]
+    public string major { get; set; }
+    [CascadingParameter(Name = "DreamJob")]
+    string djob { get; set; }
+}

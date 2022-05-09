@@ -1,0 +1,30 @@
+﻿@page "/search"
+
+<PageTitle>Phone Book</PageTitle>
+
+<EditForm Model="@example">
+<InputText id="PhoneNumber" @bind-Value = "number">  </InputText>    
+<InputText id="Name" @bind-Value = "name">  </InputText>   
+<button class="btn btn-primary" type="submit">submit</button> 
+</EditForm>
+<h1 >PhoneBook</h1>
+
+   
+        <CascadingValue Value = "number"> 
+            <CascadingValue Value = "name"> 
+            <Component2></Component2>
+        </CascadingValue>
+    </CascadingValue>
+
+
+  @code {
+    string number;
+    string name;
+
+    private ExampleModel example = new();
+
+    public class ExampleModel
+    {
+        
+    };
+}
