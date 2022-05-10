@@ -1,0 +1,45 @@
+﻿@page "/routing"
+@page "/route"
+@page "/grocery"
+
+<PageTitle>People</PageTitle>
+
+@using blazorTest.Data
+
+
+@foreach(var gros in GroceryList)
+{
+    <li>@gros.Item</li>
+}
+
+<h3>@Message</h3>
+<input @bind="Message" @bind:event="oninput" />
+
+@code {
+    List<Grocery> GroceryList;
+
+    [Parameter]
+    public string GList { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        GroceryList = new List<Grocery>();
+
+        GroceryList.Add(new Grocery { Id = 1, Item = "Milk" });
+        GroceryList.Add(new Grocery { Id = 2, Item = "Eggs" });
+        GroceryList.Add(new Grocery { Id = 3, Item = "Bread" });
+        GroceryList.Add(new Grocery { Id = 4, Item = "Cheese" });
+    }
+
+    public class Grocery
+    {
+        public int Id { get; set; }
+        public string Item { get; set; } = "";
+    }
+}
+
+@code{
+
+    public string Message { get; set; }
+}
