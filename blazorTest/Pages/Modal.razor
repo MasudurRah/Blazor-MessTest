@@ -1,0 +1,23 @@
+﻿@page "/Modal"
+
+<h1>Modal Test</h1>
+
+<p>If you see this pop up then test passed</p>
+
+<div class="card mb-4">
+    <div class "card-body">
+        <p class="card-text">
+            <code>
+                @("Modal.Show<Confirm>(\"Welcome to Modal\", options);")
+            </code>
+
+        </p>
+    </div>
+</div>
+
+
+@code{
+    //[CascadingParameter] public IModalService Modal {get; set;}
+    //void ShowModal() Modal.Show<Confirm>("Modal");
+}
+
