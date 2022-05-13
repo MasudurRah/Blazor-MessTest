@@ -1,0 +1,17 @@
+﻿@page "/newpage"
+
+<h3>Change the color of button</h3>
+
+<button style="background-color: @BackgroundColor">CHANGE ME!</button>
+<input @bind="BackgroundColor" @bind:event="oninput" />
+
+<br />
+<br /> 
+<h3>Another Example</h3>
+
+<button style="background-color: @DiffColor">Button</button>
+
+@code {
+    [Parameter] public string DiffColor { get; set; }
+    public string BackgroundColor { get; set; }
+}
