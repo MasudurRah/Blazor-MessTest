@@ -1,0 +1,37 @@
+﻿@page "/Form"
+@using blazorTest.Models
+<h3>CustomerForm</h3>
+
+<EditForm Model="@selectedCustomer">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            First Name
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="First Name"
+                       @bind-Value="selectedCustomer.Name" />
+            <ValidationMessage For="@(() => selectedCustomer.Name)" />
+
+                <button type ="submit" @onclick="SubmitButtonPresed">Submit</button>
+                
+                <button type="button" @onclick="CancelButtonPresed">Cancel</button>
+        </div>
+        @message
+    </div>
+</EditForm>
+
+@code{
+    Customer selectedCustomer = new Customer();
+    string message = "";
+
+    void SubmitButtonPresed()
+    {
+        message = "Action has been submitted";
+    }
+    void CancelButtonPresed()
+    {
+        message = "Action has been cancelled";
+    }
+}
