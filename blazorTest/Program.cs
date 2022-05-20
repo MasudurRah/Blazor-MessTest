@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Radzen.Blazor;
 using Radzen;
 using Microsoft.Extensions.FileProviders;
+using BlazorSliders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
 builder.Services.AddScoped<ContextMenuService>();
+builder.Services.AddScoped<SliderInterop>();
 
 var app = builder.Build();
 
